@@ -26,7 +26,7 @@ export default function ProductCard({ product, onBuyClick, index }: ProductCardP
           {product.image ? (
             <>
               <img
-                src={product.image}
+                src={product.image.startsWith('/') ? `${import.meta.env.BASE_URL}${product.image.slice(1)}` : product.image}
                 alt={product.name}
                 className="card-image"
                 loading="lazy"

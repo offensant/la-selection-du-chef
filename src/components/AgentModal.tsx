@@ -64,7 +64,7 @@ export default function AgentModal({ isOpen, onClose, product }: AgentModalProps
             <div className="modal-product-preview">
               {product.image && (
                 <img
-                  src={product.image}
+                  src={product.image.startsWith('/') ? `${import.meta.env.BASE_URL}${product.image.slice(1)}` : product.image}
                   alt={product.name}
                   className="modal-product-thumb"
                 />
