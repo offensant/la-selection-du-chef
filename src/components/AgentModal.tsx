@@ -62,13 +62,6 @@ export default function AgentModal({ isOpen, onClose, product }: AgentModalProps
 
             {/* Product Preview */}
             <div className="modal-product-preview">
-              {product.image && (
-                <img
-                  src={product.image.startsWith('/') ? `${import.meta.env.BASE_URL}${product.image.slice(1)}` : product.image}
-                  alt={product.name}
-                  className="modal-product-thumb"
-                />
-              )}
               <div className="modal-product-info">
                 <h2 className="modal-title">{product.name}</h2>
                 <span className="modal-price">{product.price}</span>

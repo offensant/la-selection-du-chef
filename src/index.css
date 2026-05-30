@@ -439,42 +439,19 @@ body {
 
 @keyframes shine-sweep { 0% { background-position: 200% 0; } 100% { background-position: -100% 0; } }
 
-/* Image */
-.card-image-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: #080808;
+/* Card without images layout */
+.card-no-image-layout .card-info {
+  padding: 20px 16px;
+  min-height: 120px;
+  justify-content: space-between;
+  background: transparent;
 }
 
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1s var(--ease-out-expo);
-}
-
-.product-card:hover .card-image { transform: scale(1.08); }
-
-.card-image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 60%);
-  pointer-events: none;
-}
-
-.card-no-image {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #222;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+@media (min-width: 768px) {
+  .card-no-image-layout .card-info {
+    padding: 24px 20px;
+    min-height: 140px;
+  }
 }
 
 /* Card Info */
@@ -483,7 +460,6 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
 }
 
 @media (min-width: 768px) { .card-info { padding: 16px 18px; } }
@@ -966,15 +942,7 @@ button {
 [data-theme="light"] .product-card:hover {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 102, 204, 0.06);
 }
-[data-theme="light"] .card-image-wrapper { background: #eee; }
-[data-theme="light"] .card-image-overlay {
-  background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.2) 30%, transparent 60%);
-}
-[data-theme="light"] .card-info {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
-}
 [data-theme="light"] .card-name { color: #1d1d1f; }
-[data-theme="light"] .card-no-image { color: #bbb; }
 [data-theme="light"] .card-buy-btn {
   color: #fff;
   background: #1d1d1f;
